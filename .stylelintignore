@@ -1,0 +1,12 @@
+
+node_modules/*
+coverage/*
+_public/*
+**/__snapshots__/*
+**/*.js
+**/*.json
+**/*.jpg
+**/*.png
+**/*.svg
+.*
+**/*.md
