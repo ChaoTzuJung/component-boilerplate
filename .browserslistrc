@@ -1,3 +1,4 @@
 # Browsers that we support
+# 是用來給不同的前端工具（Autoprefixer, babel-preset-env）共享 target browsers 和 Node.js versions 配置的. 一般推薦將配置寫在 package.json 裡的 browserslist 字段。
 
 ie 11

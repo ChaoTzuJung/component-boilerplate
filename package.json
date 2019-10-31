@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:demo": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --watch",
+    "start": "cross-env NODE_ENV=development webpack",
+    "deploy": "cross-env NODE_ENV=production webpack"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +17,14 @@
     "commander": "^3.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@svgr/webpack": "^4.3.3",
+    "babel-loader": "^8.0.6",
+    "compression-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.5.0",
@@ -20,8 +33,22 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "style-loader": "^1.0.0",
     "stylelint": "^11.1.1",
     "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^3.1.1"
+    "stylelint-order": "^3.1.1",
+    "terser-webpack-plugin": "^2.2.1",
+    "url-loader": "^2.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
