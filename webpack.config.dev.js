@@ -181,6 +181,7 @@ export default {
 					},
 				],
 			},
+			// 給前端引入svg當作component的
 			{
 				test: /\.inline.svg$/,
 				include: path.join(__dirname, 'src'),

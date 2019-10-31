@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["src/*"]
+		},
+		"moduleResolution": "node",
+		"maxNodeModuleJsDepth": 1
+	},
+	"include": ["src/**/*"]
+}
