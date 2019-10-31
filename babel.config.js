@@ -4,7 +4,7 @@
 const babelConfigForWebpackBuild = {
 	presets: [
 		[
-			// polyfill已經被整合在裡面，不用自己在整合
+			// polyfill已經被整合在裡面，不用自己在整合，所以用 usage 而不是 entry 讓你可以不用在 src/index.js import '@babel/polyfill';
 			'@babel/preset-env',
 			{
 				loose: true,
