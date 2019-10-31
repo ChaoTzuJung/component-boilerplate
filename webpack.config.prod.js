@@ -9,6 +9,9 @@ import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
+import palette from './config/palette';
+import media from './config/media';
+
 const terserDevOptions = {
 	terserOptions: {
 		ecma: 5,
@@ -187,13 +190,13 @@ const webpackProdConfig = {
 								postcssPresetEnv({
 									// determines which CSS features to polyfill, 0 (experimental) -> 4 (stable)
 									stage: 0,
-									// TODO: specifies sources (Custom Media, Custom Properties, Custom Selectors, and Environment Variables)
-									// importFrom: [
-									// 	{
-									// 		customMedia: media,
-									// 		customProperties: palette,
-									// 	},
-									// ],
+									// specifies sources (Custom Media, Custom Properties, Custom Selectors, and Environment Variables)
+									importFrom: [
+										{
+											customMedia: media,
+											customProperties: palette,
+										},
+									],
 									// instruct all plugins to omit pre-polyfilled CSS
 									preserve: false,
 								}),

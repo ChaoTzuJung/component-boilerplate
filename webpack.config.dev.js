@@ -6,6 +6,9 @@ import atImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import TerserPlugin from 'terser-webpack-plugin';
 
+import palette from './config/palette';
+import media from './config/media';
+
 const terserDevOptions = {
 	terserOptions: {
 		ecma: 5,
