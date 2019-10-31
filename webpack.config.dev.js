@@ -149,7 +149,8 @@ export default {
 				test: /\.css$/,
 				include: path.join(__dirname, 'node_modules'),
 				use: [
-					{ loader: 'style-loader', options: { sourceMap: true } },
+					{ loader: 'style-loader', options: { sourceMap: true } }, // 會將css放入js中去執行，就
+					不會產生單獨的 .css檔案
 					{ loader: 'css-loader', options: { sourceMap: true } },
 				],
 			},
@@ -159,12 +160,13 @@ export default {
 				// 判斷圖片的檔案大小。如果檔案太大，它會將圖片保持在我們輸出檔案的資料夾裡；反之若圖片的檔案小於我們設定的大小， url-loader 會它編譯為 Base64 的字串並直接插入我們的 JavaScritp 裡面。
 				loader: 'url-loader',
 				options: {
-					// 如果檔案小於 10KB，將檔案編成字串 base64
+					// 如果檔案小於 10KB，將檔案編成字串 base64，大於則使用file-loader處理圖片
 					limit: 10000,
 					// ext 是 extension 副檔名
 					name: './assets/[name]__[hash].[ext]',
 				},
 			},
+			// 給src吃的一般svg圖片
 			{
 				test: /^(?!.*\.inline\.svg$).*\.svg$/,
 				include: path.join(__dirname, 'src'),
