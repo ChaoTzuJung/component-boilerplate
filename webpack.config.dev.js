@@ -6,6 +6,8 @@ import atImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 import TerserPlugin from 'terser-webpack-plugin';
 
+import env from './config/env';
+import endpoint from './config/endpoint';
 import palette from './config/palette';
 import media from './config/media';
 
@@ -42,8 +44,7 @@ export default {
 		new webpack.HotModuleReplacementPlugin(),
 		// 定義環境變數
 		new webpack.DefinePlugin({
-			// TODO: JSON.stringify 讓字串統一變雙引號
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env': { ...env, ...endpoint },
 		}),
 		new HtmlWebpackPlugin({
 			template: './src/index.html', // 以 index.html 這支檔案當作模版注入 html

@@ -9,6 +9,8 @@ import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 
+import env from './config/env';
+import endpoint from './config/endpoint';
 import palette from './config/palette';
 import media from './config/media';
 
@@ -67,8 +69,7 @@ const webpackProdConfig = {
 	plugins: [
 		// 定義環境變數
 		new webpack.DefinePlugin({
-			// TODO: JSON.stringify 讓字串統一變雙引號
-			'process.env.NODE_ENV': JSON.stringify('production'),
+			'process.env': { ...env, ...endpoint },,
 		}),
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
