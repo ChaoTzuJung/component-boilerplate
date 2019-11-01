@@ -6,7 +6,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 import history from 'connect-history-api-fallback';
 import httpProxy from 'http-proxy';
 
-import config from './webpack.config';
+import config from './webpack.config.dev';
 import { HOST_MAP } from './config/endpoint';
 
 const host = HOST_MAP[process.env.PROXY];

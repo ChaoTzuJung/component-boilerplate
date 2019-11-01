@@ -152,10 +152,10 @@ export default {
 			},
 			{
 				test: /\.css$/,
+				// 處理第三方套件的css EX: bootstrap 或 normalize.css
 				include: path.join(__dirname, 'node_modules'),
 				use: [
 					{ loader: 'style-loader', options: { sourceMap: true } }, // 會將css放入js中去執行，就
-					不會產生單獨的 .css檔案
 					{ loader: 'css-loader', options: { sourceMap: true } },
 				],
 			},
