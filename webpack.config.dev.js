@@ -29,7 +29,7 @@ export default {
 	mode: process.env.NODE_ENV,
 	devtool: 'cheap-module-eval-source-map',
 	entry: {
-		// webpack-hot-middleware/client(讓entry可以hot reload) 與 react-hot-loader/patch ?
+		// webpack-hot-middleware/client(讓entry可以hot reload) 與 react-hot-loader/patch(讓hot reload ignore react-router)
 		app: ['webpack-hot-middleware/client', 'react-hot-loader/patch', './src/index.js'],
 	},
 	output: {
