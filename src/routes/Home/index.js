@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 
 const Home = () => (
 	<div>
@@ -9,4 +10,4 @@ const Home = () => (
 	</div>
 );
 
-export default Home;
+export default hot(Home);

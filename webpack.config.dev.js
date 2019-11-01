@@ -30,8 +30,7 @@ export default {
 	devtool: 'cheap-module-eval-source-map',
 	entry: {
 		// webpack-hot-middleware/client(讓entry可以hot reload) 與 react-hot-loader/patch ?
-		// app: ['webpack-hot-middleware/client', 'react-hot-loader/patch', './src/index.js'],
-		app: ['webpack-hot-middleware/client', './src/index.js'],
+		app: ['webpack-hot-middleware/client', 'react-hot-loader/patch', './src/index.js'],
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -93,6 +92,7 @@ export default {
 						'@babel/preset-react',
 					],
 					plugins: [
+						'react-hot-loader/babel',
 						['module-resolver', { root: ['./src'] }],
 						'@babel/plugin-syntax-dynamic-import',
 						'@babel/plugin-syntax-import-meta',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router } from 'react-router';
+import { hot } from 'react-hot-loader/root';
 
 import Home from 'routes/Home';
 import App from 'layouts/App';
@@ -19,4 +20,4 @@ const Routes = ({ history }) => (
 	<Router history={history} routes={routeConfig} />
 );
 
-export default Routes;
+export default hot(Routes);
