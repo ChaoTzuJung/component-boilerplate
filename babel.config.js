@@ -9,13 +9,14 @@ const babelConfigForWebpackBuild = {
 			{
 				loose: true,
 				useBuiltIns: 'usage',
-				corejs: 2,
+				corejs: 3,
 			},
 		],
 		'@babel/preset-react',
 	],
 	// Stage 3
 	plugins: [
+		// 讓import檔案的路徑少寫很多 ../../componeny
 		['module-resolver', { root: ['./src'] }],
 		'@babel/plugin-syntax-dynamic-import', // 動態import加載
 		'@babel/plugin-syntax-import-meta', // Allow parsing of import.meta
@@ -32,7 +33,7 @@ const babelConfigForJest = {
 			{
 				loose: true,
 				useBuiltIns: 'usage',
-				corejs: 2,
+				corejs: 3,
 				// webpack offers multiple deployment targets(server(node) or browser(web))
 				targets: {
 					node: 'current',
