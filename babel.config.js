@@ -9,19 +9,18 @@ const babelConfigForWebpackBuild = {
 			{
 				loose: true,
 				useBuiltIns: 'usage',
-				corejs: 2,
+				corejs: 3,
 			},
 		],
-		'@babel/preset-react',
 	],
 	// Stage 3
 	plugins: [
+		// 讓import檔案的路徑少寫很多 ../../componeny
 		['module-resolver', { root: ['./src'] }],
 		'@babel/plugin-syntax-dynamic-import', // 動態import加載
 		'@babel/plugin-syntax-import-meta', // Allow parsing of import.meta
 		'@babel/plugin-proposal-class-properties', // 解析Class的屬性
 		'@babel/plugin-proposal-json-strings',
-		'@babel/plugin-transform-react-constant-elements',
 	],
 };
 
@@ -32,14 +31,13 @@ const babelConfigForJest = {
 			{
 				loose: true,
 				useBuiltIns: 'usage',
-				corejs: 2,
+				corejs: 3,
 				// webpack offers multiple deployment targets(server(node) or browser(web))
 				targets: {
 					node: 'current',
 				},
 			},
 		],
-		'@babel/preset-react',
 	],
 	plugins: [
 		['module-resolver', { root: ['./src'] }],
@@ -47,7 +45,6 @@ const babelConfigForJest = {
 		'@babel/plugin-syntax-import-meta',
 		'@babel/plugin-proposal-class-properties',
 		'@babel/plugin-proposal-json-strings',
-		'@babel/plugin-transform-react-constant-elements',
 	],
 };
 

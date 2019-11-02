@@ -29,8 +29,8 @@ export default {
 	mode: process.env.NODE_ENV,
 	devtool: 'cheap-module-eval-source-map',
 	entry: {
-		// webpack-hot-middleware/client(讓entry可以hot reload) 與 react-hot-loader/patch ?
-		app: ['webpack-hot-middleware/client', 'react-hot-loader/patch', './src/index.js'],
+		// webpack-hot-middleware/client(讓entry可以hot reload)
+		app: ['webpack-hot-middleware/client', './src/index.js'],
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
@@ -89,16 +89,13 @@ export default {
 					presets: [
 						// useBuiltIns 有 "usage" | "entry" | false
 						['@babel/preset-env', { loose: true, modules: false, useBuiltIns: 'usage', corejs: 2 }],
-						'@babel/preset-react',
 					],
 					plugins: [
-						'react-hot-loader/babel',
 						['module-resolver', { root: ['./src'] }],
 						'@babel/plugin-syntax-dynamic-import',
 						'@babel/plugin-syntax-import-meta',
 						'@babel/plugin-proposal-class-properties',
 						'@babel/plugin-proposal-json-strings',
-						'@babel/plugin-transform-react-constant-elements',
 					],
 					//  babel-loader not reads from .babelrc file
 					babelrc: false,
@@ -212,9 +209,6 @@ export default {
 		modules: ['node_modules'],
 		// resolve.alias配置項通過別名來把原來導入路徑映射成一個新的導入路徑
 		alias: {
-			// React項目中使用hot-react-loader 要修改webpack
-			// https://www.cnblogs.com/hughes5135/p/10609301.html
-			'react-dom': '@hot-loader/react-dom',
 		},
 	}
 }

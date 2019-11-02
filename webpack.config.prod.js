@@ -147,7 +147,6 @@ const webpackProdConfig = {
 				options: {
 					presets: [
 						['@babel/preset-env', { loose: true, modules: false, useBuiltIns: 'usage', corejs: 2 }],
-						'@babel/preset-react',
 					],
 					plugins: [
 						['module-resolver', { root: ['./src'] }],
@@ -155,7 +154,6 @@ const webpackProdConfig = {
 						'@babel/plugin-syntax-import-meta',
 						'@babel/plugin-proposal-class-properties',
 						'@babel/plugin-proposal-json-strings',
-						'@babel/plugin-transform-react-constant-elements',
 					],
 					babelrc: false,
 				},
