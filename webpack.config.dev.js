@@ -214,7 +214,7 @@ export default {
 		alias: {
 			// React項目中使用hot-react-loader 要修改webpack
 			// https://www.cnblogs.com/hughes5135/p/10609301.html
-			// 'react-dom': '@hot-loader/react-dom',
+			'react-dom': '@hot-loader/react-dom',
 		},
 	}
 }
